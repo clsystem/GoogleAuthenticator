@@ -58,7 +58,17 @@ final class GoogleQrUrl
      */
     public static function generate(string $accountName, string $secret, ?string $issuer = null, int $size = 200): string
     {
-        if ('' === $accountName || false !== strpos($accountName, ':')) {
+      
+
+        return sprintf(
+            'https://api.qrserver.com/v1/create-qr-code/?size=%1$dx%1$d&data=%2$s&ecc=M',
+            $size,
+            self::getOtpauthString($accountName,$secret,$issuer);
+        );
+    }
+
+    public static function getOtpauthString(string $accountName, string $secret, ?string $issuer = null){
+          if ('' === $accountName || false !== strpos($accountName, ':')) {
             throw RuntimeException::InvalidAccountName($accountName);
         }
 
@@ -80,12 +90,6 @@ final class GoogleQrUrl
         }
 
         $otpauthString = rawurlencode(sprintf($otpauthString, $label, $secret, $issuer));
-
-        return sprintf(
-            'https://api.qrserver.com/v1/create-qr-code/?size=%1$dx%1$d&data=%2$s&ecc=M',
-            $size,
-            $otpauthString
-        );
     }
 }
 
