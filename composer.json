@@ -1,27 +1,20 @@
 {
-    "name": "sonata-project/google-authenticator",
+    "name": "clsystem/google-authenticator",
     "description": "Library to integrate Google Authenticator into a PHP project",
     "license": "MIT",
     "type": "library",
-    "abandoned": true,
+    "abandoned": false,
     "keywords": [
         "google authenticator"
     ],
     "authors": [
+        
         {
-            "name": "Thomas Rabaix",
-            "email": "thomas.rabaix@gmail.com"
-        },
-        {
-            "name": "Christian Stocker",
-            "email": "me@chregu.tv"
-        },
-        {
-            "name": "Andre DeMarre",
-            "homepage": "http://www.devnetwork.net/viewtopic.php?f=50&t=94989"
+            "name": "Cristian",
+            "homepage": "https://www.clsystem.com.br"
         }
     ],
-    "homepage": "https://github.com/sonata-project/GoogleAuthenticator",
+    "homepage": "https://github.com/clsystem/GoogleAuthenticator",
     "require": {
         "php": "^7.3 || ^8.0"
     },
@@ -32,13 +25,13 @@
     "autoload": {
         "psr-4": {
             "Google\\Authenticator\\": "src/",
-            "Sonata\\GoogleAuthenticator\\": "src/"
+            "clsystem\\GoogleAuthenticator\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
             "Google\\Authenticator\\Tests\\": "tests/",
-            "Sonata\\GoogleAuthenticator\\Tests\\": "tests/"
+            "clsystem\\GoogleAuthenticator\\Tests\\": "tests/"
         }
     },
     "config": {
